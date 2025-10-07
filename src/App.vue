@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
+//import HomeView from './views/HomeView.vue';
 
 
 </script>
@@ -10,7 +11,6 @@ import { RouterLink, RouterView } from 'vue-router'
 
     <div class="wrapper">
      
-
       <nav>
         <RouterLink to="/">Home</RouterLink>
         
