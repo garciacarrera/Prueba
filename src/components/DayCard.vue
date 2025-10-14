@@ -15,7 +15,7 @@ const props= defineProps<{
 <template>
 
 
-    <div :class="{'bg-red-50': props.dias.selected}" class="max-w-xs mx-auto p-4 rounded-lg border shadow-sm">
+    <div :class="{'bg-red-500': props.dias.selected===true}" class="max-w-xs mx-auto p-4 rounded-lg border shadow-sm">
   
   <h3 class="text-lg font-semibold text-gray-800 mb-1">
     {{ props.dias.name }}

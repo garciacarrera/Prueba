@@ -2,7 +2,8 @@
 import type { IWeekDay } from '@/models/IWeekDay';
 import DayCard from './DayCard.vue';
 import  {ref, toValue}  from 'vue';
-import type { forEachChild } from 'typescript';
+import { forEachChild } from 'typescript';
+import { renderToString } from 'vue/server-renderer';
 
 
 
@@ -22,8 +23,12 @@ const diasseleccionado=ref<(IWeekDay[])>(diassemana)
 
 const marcardias =(id:number)=>{
 
-for () {
-   
+for (let i = 0; i < diasseleccionado.value.length; i++) {
+    const element = diasseleccionado.value[i];
+    if (element!.id===id) {
+      return element!.selected===!element!.selected
+    }
+
     
 }
  
@@ -33,7 +38,7 @@ for () {
 
 <template>
 
-    <button class="w-full py-1.5 bg-green-500 text-white text-sm font-medium rounded-md hover:bg-green-600" v-for="l in diasseleccionado"   :class="marcardias(l.id)">{{ l.name }}</button>
+    <button class="w-full py-1.5 bg-green-500 text-white text-sm font-medium rounded-md hover:bg-green-600" v-for="l in diasseleccionado " :key="l.id"  :class="marcardias(l.id)">{{ l.name }}</button>
 
 <DayCard v-for="diasseleccionado in diassemana" :dias="diasseleccionado"/>
 </template>
