@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import DayManager from './components/DayManager.vue';
 
-import CatalogoManager from './components/CatalogoManager.vue';
+
 
 
 
@@ -14,7 +15,7 @@ import CatalogoManager from './components/CatalogoManager.vue';
     <div class="wrapper">
       
       <nav>
-        <CatalogoManager/>
+        <DayManager/>
         
       </nav>
     </div>
